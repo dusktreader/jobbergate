@@ -23,7 +23,7 @@ jobs:
     steps:
 
       - name: Fail if ref is not a tag
-        if: ${{ github.ref_type != "tag" }}
+        if: ${{ github.ref_type != 'tag' }}
         run: echo "Publish only supported from tag refs!"; exit 1
 
       - uses: actions/checkout@v3
