@@ -42,8 +42,8 @@ jobs:
           echo "::set-output name=version::$(poetry version --short)"
 
       - name: Fail if poetry package version doesn't match tag
-        if: ${{ github.ref_name != steps.poetry-package-versions.outputs.version }}
-        run: echo "Poetry package version doesn't match tag! tag=${{ github.ref_name }} version=${{ steps.poetry-package-versions.outputs.version }} "; exit 1
+        if: ${{ github.ref_name != steps.poetry-package-version.outputs.version }}
+        run: echo "Poetry package version doesn't match tag! tag=${{ github.ref_name }} version=${{ steps.poetry-package-version.outputs.version }} "; exit 1
 
       - name: Setup AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
