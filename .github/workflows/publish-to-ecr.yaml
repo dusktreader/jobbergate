@@ -32,8 +32,9 @@ jobs:
         with:
           python-version: 3.8
 
+      - uses: Gr1N/setup-poetry@v7
+
       - id: poetry-package-version
-        uses: Gr1N/setup-poetry@v7
         name: Get version of project from poetry
         working-directory: jobbergate-api
         run: |
