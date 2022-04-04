@@ -36,6 +36,7 @@ jobs:
 
       - id: poetry-package-version
         name: Get version of project from poetry
+        working-directory: jobbergate-api
         run: echo "::set-output name=version::$(poetry version --short)"
 
       - name: Fail if poetry package version doesn't match tag
